@@ -1,0 +1,7 @@
+node_modules/
+.idea
+public/vendor/
+*.log
+public/css/main.css
+*.css.map
+.sass-cache

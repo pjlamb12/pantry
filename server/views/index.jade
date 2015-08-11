@@ -1,0 +1,30 @@
+extends ../includes/layout
+
+block main-content
+	.navbar.navbar-inverse.navbar-fixed-top
+		.container
+			.navbar-header
+				button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar")
+					span.sr-only Toggle Navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(ui-sref="home") MEAN Seed
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li(ng-class="{active: $state.includes('home')}")
+						a(ui-sref="home") Home
+					li(ng-class="{active: $state.includes('view1')}")
+						a(ui-sref="view1") View 1
+					li(ng-class="{active: $state.includes('view2')}")
+						a(ui-sref="view2") View 2
+					li(ng-class="{active: $state.includes('nested')}")
+						a(href="", data-toggle="dropdown").dropdown-toggle Nested
+							b.caret
+						ul.dropdown-menu
+							li
+								a(ui-sref="nested.nested1") Nested 1
+	section.content
+		div(ui-view)
+
+	footer.container.text-center
