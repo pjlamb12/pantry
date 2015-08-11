@@ -6,7 +6,10 @@ var app = angular.module('app', [
 	'app.view1',
 	'app.view2',
 	'app.nested',
-	'app.nested.nested1'
+	'app.nested.nested1',
+	'app.appAuth',
+	'app.appIdentity',
+	'app.appUser'
 ]);
 
 app.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
