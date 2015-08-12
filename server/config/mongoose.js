@@ -10,6 +10,6 @@ module.exports = function(config) {
 		console.log('pantry db opened');
 	});
 
-	// userModel.createDefaultUsers();
+	userModel.createDefaultUsers();
 };
 
