@@ -9,8 +9,7 @@ require('./server/config/express')(app, config);
 
 require('./server/config/mongoose')(config);
 
-// This will include what's needed to set up login
-// require('./server/config/passport')();
+require('./server/config/passport')();
 
 require('./server/config/routes')(app);
 
