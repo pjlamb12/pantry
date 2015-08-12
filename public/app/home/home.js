@@ -23,12 +23,12 @@ angular.module('app.home',
 	};
 
 	$scope.signout = function() {
-		appAuth.logoutUser() {
+		appAuth.logoutUser().then(function(){
 			$scope.username = "";
 			$scope.password = "";
 			console.log('You have successfully logged out');
 			// $location.path('/');
-		}
+		})
 	};
 
 	console.log("Home");

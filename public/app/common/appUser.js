@@ -1,4 +1,4 @@
-angular.module('app.appUser').factory('appUser', function($resource){
+angular.module('app.appUser', []).factory('appUser', function($resource){
 	var UserResource = $resource('/api/users/:id', {_id: "@id"}, {
 		update: {method: 'PUT', isArray: false}
 	});

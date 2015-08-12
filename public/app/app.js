@@ -2,6 +2,7 @@
 
 var app = angular.module('app', [
 	'ui.router',
+	'ngResource',
 	'app.home',
 	'app.view1',
 	'app.view2',

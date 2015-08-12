@@ -1,3 +1,8 @@
 .container
 	h1 This is the home page
 	h2 {{hello}}
+
+	form
+		input.form-control(type="text", placeholder="Username", ng-model="username")
+		input.form-control(type="password", placeholder="Password", ng-model="password")
+		button.btn.btn-primary(ng-click="signin(username,password)") Sign In

@@ -1,4 +1,4 @@
-angular.module('app.appIdentity').factory('appIdentity', function($window, appUser){
+angular.module('app.appIdentity', []).factory('appIdentity', function($window, appUser){
 	var currentUser;
 	if(!!$window.bootstrappedUserObject) {
 		currentUser = new appUser();
