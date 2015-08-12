@@ -13,7 +13,14 @@ module.exports = function(app) {
 	});
 
 	app.get('*', function(req, res) {
-		res.render('index');
+		console.log(req.user);
+		if( req.user ){
+			req.user.salt = null;
+			req.user.hashed_pwd = null;
+		}
+		res.render('index', {
+			bootstrappedUser: req.user
+		});
 	});
 
 }
