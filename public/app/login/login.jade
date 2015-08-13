@@ -1,0 +1,27 @@
+div.container
+	h1 Welcome to your pantry!
+	p Sign in or sign up to get started.
+
+	div.forms.row
+		div.well.col-md-4.col-sm-12.col-md-offset-1
+			form
+				div.form-group
+					input(type="text", placeholder="Username", ng-model="userData.username").form-control
+				div.form-group
+					input(type="password", placeholder="Password", ng-model="userData.password").form-control
+				div.form-group
+					button.btn.btn-primary(ng-click="signin(userData)") Sign In
+
+		div.well.col-md-4.col-sm-12.col-md-offset-1
+			form
+				div.form-group
+					input(type="text", placeholder="First Name", ng-model="newUserData.firstName").form-control
+				div.form-group
+					input(type="text", placeholder="Last Name", ng-model="newUserData.lastName").form-control
+				div.form-group
+					input(type="text", placeholder="Username", ng-model="newUserData.username").form-control
+				div.form-group
+					input(type="password", placeholder="Password", ng-model="newUserData.password").form-control
+				div.form-group
+					button.btn.btn-primary(ng-click="signup(newUserData)") Sign Up
+
