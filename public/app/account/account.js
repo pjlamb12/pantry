@@ -8,8 +8,15 @@ angular.module('app.account',
 			controller: 'AccountController'
 		});
 })
-.controller('AccountController', function($scope){
-	$scope.hello = "Hello!";
+.controller('AccountController', ['$scope', 'appAuth', 'appIdentity', 'appNotifier', function($scope, appAuth, appIdentity, appNotifier){
+	$scope.userData = appIdentity.currentUser;
 
-	console.log("Home");
-});
+	$scope.update = function () {
+		appAuth.updateCurrentUser($scope.userData).then(function() {
+			appNotifier.notify('You successfully updated your account!');
+		}, function(reason) {
+			appNotifier.error(reason);
+		});
+	};
+
+}]);

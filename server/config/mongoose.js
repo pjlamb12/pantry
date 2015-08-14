@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
-	userModel = require('../models/User');
+	userModel = require('../models/User'),
+	storageModel = require('../models/Storage.js');
 
 
 module.exports = function(config) {
@@ -11,5 +12,6 @@ module.exports = function(config) {
 	});
 
 	userModel.createDefaultUsers();
+	storageModel.createDefaultStorageLocations();
 };
 

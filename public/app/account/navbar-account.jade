@@ -4,3 +4,8 @@
 			a.dropdown-toggle(href="#", data-toggle="dropdown")
 				{{ userData.identity.currentUser.firstName + ' ' + userData.identity.currentUser.lastName }}
 				b.caret
+			ul.dropdown-menu
+				li
+					a(ui-sref="account") Your Account
+				li
+					a(href="#", ng-click="signout()") Sign Out
