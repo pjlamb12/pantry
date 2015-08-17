@@ -5,11 +5,16 @@ angular.module('app.home',
 		.state('home',{
 			url: '/',
 			templateUrl: '/partials/home/home',
-			controller: 'HomeController'
+			controller: 'HomeController',
+			resolve: {
+				locations: function(appStorageLocations) {
+					return appStorageLocations.query();
+				}
+			}
 		});
 })
-.controller('HomeController', function($scope){
-	$scope.hello = "Hello!";
+.controller('HomeController', ['$scope', 'locations', function($scope, locations){
+	$scope.locations = locations;
 
-	console.log("Home");
-});
+	console.log(locations);
+}]);

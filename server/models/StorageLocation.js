@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-var storageSchema = mongoose.Schema({
+var storageLocationSchema = mongoose.Schema({
 	name: {type: String, required: '{PATH} is required!'},
 	contents: { type: Array, "default": []}
 });
 
-var Storage = mongoose.model('Storage', storageSchema);
+var StorageLocation = mongoose.model('StorageLocation', storageLocationSchema);
 
 function createDefaultStorageLocations () {
 	var item = {
@@ -17,9 +17,9 @@ function createDefaultStorageLocations () {
 	var contents = new Array();
 	contents.push(item);
 	contents.push(item);
-	Storage.find({}).exec(function(err, collection){
+	StorageLocation.find({}).exec(function(err, collection){
 		if( collection.length === 0) {
-			Storage.create({name: 'Pantry', contents: contents});
+			StorageLocation.create({name: 'Pantry', contents: contents});
 		}
 	});
 };

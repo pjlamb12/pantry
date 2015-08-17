@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
 	userModel = require('../models/User'),
-	storageModel = require('../models/Storage.js');
+	storageModel = require('../models/StorageLocation.js');
 
 
 module.exports = function(config) {

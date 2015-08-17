@@ -1,5 +1,6 @@
 var auth = require('./auth'),
-	users = require('../controllers/users.js');
+	users = require('../controllers/users.js'),
+	storageLocations = require('../controllers/storageLocations.js');
 
 module.exports = function(app) {
 
@@ -9,6 +10,11 @@ module.exports = function(app) {
 
 	app.post('/api/users', users.createUser);
 	app.put('/api/users', users.updateUser);
+
+	// app.post('/api/storage-locations', storageLocations.createLocation);
+	// app.put('/api/storage-locations', storageLocations.updateLocation);
+	app.get('/api/storage-locations', storageLocations.getStorageLocations);
+	// app.get('/api/storage-locations/:id', storageLocations.getStorageLocationsById);
 
 	app.post('/login', auth.authenticate);
 	app.post('/logout', function(req, res) {

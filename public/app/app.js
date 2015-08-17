@@ -13,7 +13,8 @@ var app = angular.module('app', [
 	'app.appAuth',
 	'app.appIdentity',
 	'app.appUser',
-	'app.appNotifier'
+	'app.appNotifier',
+	'app.appStorageLocations'
 ]);
 
 app.run(['$rootScope', '$state', '$stateParams', 'appIdentity', function($rootScope, $state, $stateParams, appIdentity) {
