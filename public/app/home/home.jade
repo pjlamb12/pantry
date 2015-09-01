@@ -4,4 +4,4 @@
 
 	ul.locations-list
 		li(ng-repeat="location in locations")
-			a(ui-sref="location({ locationId: location.$id })") {{ location.name }}
+			a(ui-sref="location({ locationId: location._id })") {{ location.name }}

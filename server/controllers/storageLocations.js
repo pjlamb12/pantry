@@ -7,7 +7,7 @@ exports.getStorageLocations = function(req, res) {
 };
 
 exports.getStorageLocationsById = function(req, res) {
-	StorageLocation.findOne({_id:req.params.id}).exec(function(err, storageLocation) {
+	StorageLocation.findOne({id:req.params.id}).exec(function(err, storageLocation) {
 		res.send(storageLocation);
 	});
 };

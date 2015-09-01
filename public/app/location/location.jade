@@ -1,0 +1,9 @@
+.container
+	h1 This is the list of the items in your location
+
+	ul.locations-list
+		li(ng-repeat="item in location")
+			p {{ item.name }}
+			ul
+				li(ng-repeat="c in item.contents")
+					p {{ c.name }}

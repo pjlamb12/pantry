@@ -15,6 +15,4 @@ angular.module('app.home',
 })
 .controller('HomeController', ['$scope', 'locations', function($scope, locations){
 	$scope.locations = locations;
-
-	console.log(locations);
 }]);

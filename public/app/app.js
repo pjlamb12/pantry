@@ -4,6 +4,7 @@ var app = angular.module('app', [
 	'ui.router',
 	'ngResource',
 	'app.home',
+	'app.location',
 	'app.account',
 	'app.login',
 	'app.view1',
