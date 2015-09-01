@@ -1,6 +1,7 @@
 angular.module('app.appStorageLocations', []).factory('appStorageLocations', function($resource){
 	var StorageLocationResource = $resource('/api/storage-locations/:id', {_id: "@id"}, {
-		update: {method: 'PUT'}
+		update: {method: 'PUT'},
+		get: {isArray: true}
 	});
 
 	return StorageLocationResource;

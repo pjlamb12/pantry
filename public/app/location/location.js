@@ -8,14 +8,13 @@ angular.module('app.location',
 			controller: 'LocationController',
 			resolve: {
 				location: function(appStorageLocations, $stateParams) {
-					console.log($stateParams);
-					return appStorageLocations.query($stateParams.locationId);
+					return appStorageLocations.get($stateParams.locationId).$promise;
 				}
 			}
 		});
 })
 .controller('LocationController', ['$scope', 'location', function($scope, location){
-	$scope.location = location;
+	$scope.location = location[0];
 
-	console.log(location);
+	console.log($scope.location[0]);
 }]);
