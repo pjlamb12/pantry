@@ -1,0 +1,11 @@
+.container
+	h1 This is the list of the items in your {{location.name}}
+
+	table.table
+		thead
+			tr
+				td
+					h6 Item Name
+		tbody
+			tr(ng-repeat="c in location.contents")
+				td {{ c.name }}

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var storageLocationSchema = mongoose.Schema({
 	name: {type: String, required: '{PATH} is required!'},
+	owner: {type: Number, required: '{PATH} is required!'},
 	contents: { type: Array, "default": []}
 });
 
@@ -24,4 +25,3 @@ function createDefaultStorageLocations () {
 	});
 };
 
-exports.createDefaultStorageLocations = createDefaultStorageLocations;

@@ -5,6 +5,7 @@ var app = angular.module('app', [
 	'ngResource',
 	'app.home',
 	'app.location',
+	'app.location.create',
 	'app.account',
 	'app.login',
 	'app.view1',

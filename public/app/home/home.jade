@@ -1,6 +1,8 @@
 .container
 	h1 Welcome to your pantry!
 	p If this is your first time, start by creating a storage location, such as the fridge, your pantry, food storage, or wherever. You choose where to store your food, so name it what you want.
+	p
+		a(ui-sref="location.create").btn.btn-primary.btn-large Create New Location
 
 	ul.locations-list
 		li(ng-repeat="location in locations")
