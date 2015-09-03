@@ -15,18 +15,18 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
-    "toastr": "~2.0.2",
-    "angular": "~1.2.16",
-    "angular-resource": "~1.2.16",
-    "angular-route": "~1.2.16",
-    "bootstrap": "~3.3.1",
-    "angular-mocks": "~1.3.6",
-    "angular-bootstrap": "~0.10.0",
-    "angular-ui-router": "~0.2.10",
+    "jquery": "latest",
+    "toastr": "latest",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "angular-mocks": "latest",
+    "angular-bootstrap": "latest",
+    "angular-ui-router": "latest",
     "components-font-awesome": "latest"
   },
   "resolutions": {
-    "angular": "1.3.18"
+    "angular": "latest"
   }
 }

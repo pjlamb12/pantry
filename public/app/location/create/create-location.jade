@@ -1,2 +1,31 @@
 .container
-	h1 This is where you'll create a location
+	form.form-horizontal
+		.form-group
+			label(for="location.name").control-label.col-sm-2 Location Name
+			.col-sm-10
+				input(type="text", ng-model="location.name").form-control
+		.form-group
+			label Add items below
+		.form-group
+			label(for="item.name").control-label.col-sm-2 Item Name
+			.col-sm-10
+				input(type="text", ng-model="item.name").form-control
+		.form-group
+			label(for="item.quantity").control-label.col-sm-2 Quantity
+			.col-sm-10
+				input(type="number", ng-model="item.quantity").form-control
+		.form-group
+			label(for="item.exp_date").control-label.col-sm-2 Expiration Date
+			.col-sm-10
+				input(type="text", ng-model="item.exp_date", datepicker-popup="{{datepicker.format}}", min-date="{{datepicker.minDate}}", is-open="datepicker.opened", close-text="{{datepicker.closeText}}").form-control
+				span.input-group-btn
+					button(type="button", ng-click="openDatepicker($event)").btn.btn-default
+						i.glyphicon.glyphicon-calendar
+		.form-group
+			label(for="item.notes").control-label.col-sm-2 Notes
+			.col-sm-10
+				input(type="textarea", ng-model="item.notes").form-control
+		.form-group
+			a.btn.btn-primary(href="#", ng-click="addItem()") Add Item
+
+h3 {{ datepicker.opened }}
