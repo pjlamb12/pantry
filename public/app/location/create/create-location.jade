@@ -24,8 +24,30 @@
 		.form-group
 			label(for="item.notes").control-label.col-sm-2 Notes
 			.col-sm-10
-				input(type="textarea", ng-model="item.notes").form-control
+				textarea(ng-model="item.notes").form-control
 		.form-group
 			a.btn.btn-primary(href="#", ng-click="addItem()") Add Item
 
-h3 {{ datepicker.opened }}
+	table.table
+		thead
+			th Name
+			th Quantity
+			th Expiration Date
+			th Notes
+			th
+				i.glyphicon.glyphicon-trash
+			th
+				i.glyphicon.glyphicon-edit
+		tbody
+			tr(ng-repeat="item in items")
+				td {{ item.name }}
+				td {{ item.quantity }}
+				td {{ item.exp_date | date: 'MM-dd-yyyy' }}
+				td {{ item.notes }}
+				td
+					button.btn.btn-danger
+						i.glyphicon.glyphicon-trash(ng-click="removeItem($index)")
+				td
+					button.btn.btn-primary
+						i.glyphicon.glyphicon-edit(ng-click="editItem($index)")
+

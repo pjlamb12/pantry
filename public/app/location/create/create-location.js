@@ -9,9 +9,11 @@ angular.module('app.location.create',
 					templateUrl: '/partials/location/create/create-location',
 					controller: 'CreateLocationController',
 				}
-			},
-			resolve: {
 			}
+			// },
+			// onExit: function() {
+			// 	alert('Are you sure?');
+			// }
 		});
 })
 .controller('CreateLocationController', ['$scope', function($scope){
@@ -41,12 +43,20 @@ angular.module('app.location.create',
 	}
 
 	$scope.addItem = function() {
-		// items.push(item);
-		// item = {
-		// 	name: '',
-		// 	quantity: 0,
-		// 	exp_date: '',
-		// 	notes: ''
-		// };
+		$scope.items.push($scope.item);
+		$scope.item = {
+			name: '',
+			quantity: 0,
+			exp_date: '',
+			notes: ''
+		};
+	}
+
+	$scope.removeItem = function($index) {
+		$scope.items.splice($index, 1);
+	}
+	$scope.editItem = function($index) {
+		$scope.item = $scope.items[$index];
+		$scope.items.splice($index, 1);
 	}
 }]);
