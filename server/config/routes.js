@@ -11,7 +11,7 @@ module.exports = function(app) {
 	app.post('/api/users', users.createUser);
 	app.put('/api/users', users.updateUser);
 
-	// app.post('/api/storage-locations', storageLocations.createLocation);
+	app.post('/api/storage-locations', storageLocations.createStorageLocation);
 	// app.put('/api/storage-locations', storageLocations.updateLocation);
 	app.get('/api/storage-locations', storageLocations.getStorageLocations);
 	// app.get('/api/storage-locations/:id', storageLocations.getStorageLocationsById);

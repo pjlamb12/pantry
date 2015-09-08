@@ -16,7 +16,7 @@ angular.module('app.location.create',
 			// }
 		});
 })
-.controller('CreateLocationController', ['$scope', function($scope){
+.controller('CreateLocationController', ['$scope', 'appStorageLocations', function($scope, appStorageLocations){
 	$scope.location = {
 		name: '',
 		contents: []
@@ -58,5 +58,13 @@ angular.module('app.location.create',
 	$scope.editItem = function($index) {
 		$scope.item = $scope.items[$index];
 		$scope.items.splice($index, 1);
+	}
+
+	$scope.saveLocation = function() {
+		$scope.location.contents = $scope.items;
+		var newLocation = new appStorageLocations($scope.location);
+		newLocation.$save().then(function() {
+			console.log('came back from the save method');
+		});
 	}
 }]);

@@ -11,3 +11,17 @@ exports.getStorageLocationsById = function(req, res) {
 		res.send(storageLocation);
 	});
 };
+
+exports.createStorageLocation = function( req, res ) {
+	var locationData = req.body;
+	locationData.owner = req.user._id;
+
+	StorageLocation.create(locationData, function(err, location) {
+		if( err ) {
+			res.status(400);
+			console.log(err);
+			return res.send({ reason: err.toString() });
+		}
+		res.send(location);
+	});
+}
